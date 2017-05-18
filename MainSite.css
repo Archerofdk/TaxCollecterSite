@@ -1,1 +1,12 @@
-h1{text-allign: center;}
+
+html {background: #727171; page-align:}
+head {text-align: center;}
+h1 {text-align: center;}
+h2 {text-align: center;}
+p {text-align: center; size: 18; color: #fff}
+
+video {
+    display: block;
+    margin: 0 auto;
+}
+

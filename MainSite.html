@@ -1,8 +1,23 @@
 <html>
 	<title> The Tax Collecter </title>
+	
 	<link href="MainSite.css" rel="stylesheet" type="text/css">
+	
 	<head> The Tax Collector </head>
-	<body>
+	<hr>
+	
+	<script language="javascript">
+    function WriteToFile(passForm) {
+      var fso = new ActiveXObject("Scripting.FileSystemObject");
+      var fileLoc = "sample.csv";
+      var file = fso.CreateTextFile(fileLoc, true);
+      file.writeline(passForm.FirstName.value + ',' +
+                     passForm.LastName.value);
+      file.Close();
+      alert('File created successfully at location: ' + fileLoc);
+     }
+	</script>	
+<body>
 	<h1> Join in, and help the fight </h1>
 	
 	
@@ -28,13 +43,26 @@
 	Your help will be greatly appreciated! 
 	</p>
 	
-	<form method="get" action="Nothing.zip">
+	<form method="get" action="Nothing.zip" style="text-align:center">
 	<button type="submit">Windows download</button>
 	</form>
 	
-	<form method="get" action="Nothing.zip">
+	<form method="get" action="Nothing.zip" style="text-align:center">
 	<button type="submit">Mac download</button>
 	</form>
+	
+	<p> Disclaimer, this game as well as the collected data <br> is only intended for academic use. </p>
+	
+	<hr>
+	
+	
+	
+	<form>
+    Type your first name: <input type="text" name="FirstName" size="20"><br>
+    Type your last name: <input type="text" name="LastName" size="20"><br>
+    <input type="button" value="submit" onclick="WriteToFile(this.form)">
+    </form>
+
 </body>
 
 </html>
